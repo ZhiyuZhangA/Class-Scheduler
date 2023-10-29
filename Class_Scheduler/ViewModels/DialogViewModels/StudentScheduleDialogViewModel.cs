@@ -1,0 +1,89 @@
+﻿using Class_Scheduler.Common.Models;
+using Class_Scheduler.Common.Models.ClassScheduling;
+using Class_Scheduler.Service;
+using Prism.Commands;
+using Prism.Mvvm;
+using Prism.Services.Dialogs;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Class_Scheduler.ViewModels.DialogViewModels
+{
+    public class StudentScheduleDialogViewModel : BindableBase, IDialogAware
+    {
+        private readonly IRepositoryService repositoryService;
+        public string Title => "Student Schedule Timetable";
+
+        public event Action<IDialogResult> RequestClose;
+
+        public DelegateCommand GenerateScheduleCommand { get; private set; }
+        public DelegateCommand CloseCommand { get; private set; }
+
+        public List<string> StudentNames { get; private set; }
+        public string SelectedStudentName { get; set; }
+
+        private Schedule schedule;
+        public Schedule Schedule
+        {
+            get { return schedule; }
+            set { schedule = value; RaisePropertyChanged(); }
+        }
+
+        public StudentScheduleDialogViewModel(IRepositoryService repositoryService)
+        {
+            this.repositoryService = repositoryService;
+
+            GenerateScheduleCommand = new DelegateCommand(generateSchedule);
+            CloseCommand = new DelegateCommand(OnDialogClosed);
+
+            StudentNames = new List<string>();
+            Schedule = new Schedule();
+
+            foreach (var item in repositoryService.Students)
+            {
+                StudentNames.Add(item.Name);
+            }
+
+            InitSchedules();
+        }
+
+        private void generateSchedule()
+        {
+            if (SelectedStudentName != null && SelectedStudentName != string.Empty)
+            {
+                var selectedStudents = repositoryService.Students.Where(std => std.Name == SelectedStudentName);
+                if (selectedStudents.Any()) 
+                {
+                    Student student = selectedStudents.First();
+                    Schedule = student.StudentSchedule;
+                }
+            }
+        }
+
+        public bool CanCloseDialog()
+        {
+            return true;
+        }
+
+        public void OnDialogClosed()
+        {
+            RequestClose?.Invoke(new DialogResult(ButtonResult.Abort));
+        }
+
+        public void OnDialogOpened(IDialogParameters parameters)
+        {
+            
+        }
+
+        private void InitSchedules()
+        {
+            for (int i = 0; i < 45; i++)
+            {
+                Slot slot = new Slot();
+                slot.SlotId = i + 1;
+                Schedule.Slots.Add(slot);
+            }
+        }
+    }
+}

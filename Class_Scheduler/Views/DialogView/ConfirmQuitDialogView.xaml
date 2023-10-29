@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="Class_Scheduler.Views.DialogView.ConfirmQuitDialogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Class_Scheduler.Views.DialogView"
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:prism="http://prismlibrary.com/"
+             mc:Ignorable="d" 
+             d:DesignHeight="320" d:DesignWidth="420">
+    <prism:Dialog.WindowStyle>
+        <Style TargetType="Window">
+            <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterScreen" />
+            <Setter Property="ShowInTaskbar" Value="False"/>
+            <Setter Property="SizeToContent" Value="WidthAndHeight"/>
+            <Setter Property="ShowInTaskbar" Value="False"/>
+            <Setter Property="ResizeMode" Value="NoResize"/>
+            <Setter Property="WindowStyle" Value="SingleBorderWindow"/>
+            <!--<Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>-->
+            <Setter Property="WindowChrome.WindowChrome">
+                <Setter.Value>
+                    <WindowChrome GlassFrameThickness="10" CaptionHeight="0" UseAeroCaptionButtons="False" NonClientFrameEdges="Left,Right,Bottom" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </prism:Dialog.WindowStyle>
+
+    <Border Background="#EBEAF5">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+           
+            <StackPanel Grid.Row="0" Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Do you want to save the changes?" HorizontalAlignment="Left" FontSize="19" FontWeight="Regular" Margin="22 28 0 15"/>
+                    <Button Grid.Row="0"  Style="{StaticResource topButton}" HorizontalAlignment="Right" Margin="20 20 10 10" Command="{Binding CloseCommand}">
+                        <Icon:PackIconMaterial Kind="Close" Width="30"/>
+                    </Button>
+                </StackPanel>
+                <TextBlock Text="File Name" Margin="20 13 0 0" FontSize="12" FontWeight="Normal"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Text="{Binding FileName}" Margin="20 7 20 5" Style="{StaticResource textBoxInput}" AcceptsReturn="True" TextWrapping="Wrap" Width="330" Height="35"/>
+                </StackPanel>
+                
+                <TextBlock Text="Location" Margin="20 10 0 0" FontSize="12" FontWeight="Normal"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Text="{Binding SavingPath}" Margin="20 7 -1 5" Style="{StaticResource textBoxInput}" AcceptsReturn="True" TextWrapping="Wrap" Width="290" Height="35"/>
+                    <Button Width="32" Height="32" Margin="10 5 10 5" Style="{StaticResource SettingToolButton}" Command="{Binding ChooseLocationCommand}" RenderTransformOrigin="-0.312,0.582">
+                        <Icon:PackIconMaterial Kind="FolderUploadOutline" Width="25" Height="25" />
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+
+            <Separator Grid.Row="1"  Height="8" Background="#F9F9FA" Margin="0 5 0 10" />
+
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="330">
+
+
+                <Button Style="{StaticResource dialogButton1}" Margin="0 20 0 30" Command="{Binding ConfirmSaveCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Save"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource dialogButton2}" Margin="30 20 0 30" Command="{Binding CancelCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Cancel"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+
+        </Grid>
+    </Border>
+</UserControl>

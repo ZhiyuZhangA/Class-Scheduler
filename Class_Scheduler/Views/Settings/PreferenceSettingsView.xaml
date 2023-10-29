@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Class_Scheduler.Views.Settings.PreferenceSettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Class_Scheduler.Views.Settings"
+             xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Application Settings" FontWeight="SemiBold" Foreground="#53515c" Margin="0 0 0 5"/>
+            <Separator Height="0.5" Background="#e2e2e4" Margin="0 7 0 7"/>
+            <DockPanel Margin="0" LastChildFill="False">
+                <StackPanel DockPanel.Dock="Left" VerticalAlignment="Center">
+                    <TextBlock FontSize="13" Text="Save automatically when close" FontWeight="Medium" Foreground="#53515c" Margin="0 0 0 0"/>
+                </StackPanel>
+                <CheckBox DockPanel.Dock="Right" Margin="0 0 50 0" IsChecked="{Binding AutoSaveClose}" Style="{DynamicResource ToggleButtonStyle}">
+                    
+                </CheckBox>
+            </DockPanel>
+        </StackPanel>
+
+
+
+    </Grid>
+</UserControl>

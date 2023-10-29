@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="Class_Scheduler.Views.DialogView.AddTeachersDialogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Class_Scheduler.Views.DialogView"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="350">
+    <prism:Dialog.WindowStyle>
+        <Style TargetType="Window">
+            <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterScreen" />
+            <Setter Property="ShowInTaskbar" Value="False"/>
+            <Setter Property="SizeToContent" Value="WidthAndHeight"/>
+            <Setter Property="ShowInTaskbar" Value="False"/>
+            <Setter Property="ResizeMode" Value="NoResize"/>
+            <Setter Property="WindowStyle" Value="SingleBorderWindow"/>
+            <!--<Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>-->
+            <Setter Property="WindowChrome.WindowChrome">
+                <Setter.Value>
+                    <WindowChrome GlassFrameThickness="10" CaptionHeight="0" UseAeroCaptionButtons="False" NonClientFrameEdges="Left,Right,Bottom" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </prism:Dialog.WindowStyle>
+
+    <Border Background="#EBEAF5">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" FontSize="25" FontWeight="SemiBold" Margin="30 35 0 0"
+                        HorizontalAlignment="Left" Foreground="#121518"><Run Text="Add"/><Run Text=" "/><Run Language="zh-cn" Text="Teacher"/></TextBlock>
+
+            <!--<Button Style="{StaticResource topButton}" Margin="0,35,25,0" Background="#dcdcdc" HorizontalAlignment="Right" VerticalAlignment="Top" Click="onQuitBtn_Click">
+                <Icon:PackIconMaterial Kind="Close"/>
+            </Button>-->
+
+            <!--Separator-->
+            <Separator Grid.Row="1"  Height="8" Background="#F9F9FA" Margin="0 10 0 10" />
+
+
+            <StackPanel Grid.Row="2" Orientation="Vertical" Margin="30,0,30,0">
+                <TextBlock FontWeight="SemiBold" Foreground="#696969" Margin="0 0 0 5"><Run Language="zh-cn" Text="Teacher"/><Run Text=" Info"/></TextBlock>
+                <TextBlock FontWeight="Medium" Foreground="#696969" Margin="0 0 0 -3"><Run Language="zh-cn" Text="Teacher"/><Run Text=" Name:"/></TextBlock>
+                <TextBox x:Name="studentName" Text="{Binding Teacher.Name}" Style="{StaticResource textBoxInput}" AcceptsReturn="True" TextWrapping="Wrap" />
+                
+                <TextBlock Text="Email Address:" FontWeight="Medium" Foreground="#696969" Margin="0 0 0 -3"/>
+                <TextBox x:Name="emailAddr" Text="{Binding Teacher.EmailAddress}" Style="{StaticResource textBoxInput}" AcceptsReturn="True" TextWrapping="Wrap" />
+
+                <TextBlock Text="Unavailable Time Slots (By Slot Id)" FontWeight="Medium" Foreground="#696969" Margin="0 0 0 5"/>
+                <TextBox Text="{Binding UnavailableTimeSlotString}" Style="{StaticResource textBoxInput}" AcceptsReturn="True" TextWrapping="Wrap" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" Orientation="Vertical" Margin="30,20,30,0">
+                
+                <!--<xctk:CheckComboBox x:Name="_combo"
+                             HorizontalAlignment="Left" 
+                             VerticalAlignment="Center" Width="200" Height="30"
+                             ValueMemberPath=""
+                             SelectedValue="{Binding SubjectTaught}"
+                             ItemsSource="{Binding SubjectAvailable}" SelectedItemsOverride="{Binding SubjectTaught}" />-->
+            </StackPanel>
+
+            <Separator Grid.Row="3"  Height="8" Background="#F9F9FA" Margin="0 10 0 10" />
+
+            <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 10 0 20">
+                <Button Style="{StaticResource addButton}" Margin="10 0 0 15" Command="{Binding SubmitCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Add"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource addButton}" Margin="10 0 10 15" Command="{Binding CancelCommand}" Width="140">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Cancel"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>
