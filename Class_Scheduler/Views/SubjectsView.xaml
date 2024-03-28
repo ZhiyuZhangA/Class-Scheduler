@@ -41,7 +41,7 @@
 
         <!--Tab Button-->
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 15 0 0">
-            <Button Content="Courses" Style="{StaticResource tabStaticButton}"/>
+            <Button Content="Subjects" Style="{StaticResource tabStaticButton}"/>
         </StackPanel>
 
         <!--Separator-->

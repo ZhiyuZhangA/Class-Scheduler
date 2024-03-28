@@ -54,7 +54,7 @@ namespace Class_Scheduler.ViewModels
             GenerateScheduleCommand = new DelegateCommand(GenerateSchedule);
             CancelGenerationCommand = new DelegateCommand(CancelGeneration);
             ViewTeacherTimetableCommand = new DelegateCommand(ViewTeacherTimetable);
-            ViewStudentTimetableCommand = new DelegateCommand(ViewStudentTimetable);
+            // ViewStudentTimetableCommand = new DelegateCommand(ViewStudentTimetable);
 
             WeekdayList = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri" };
 

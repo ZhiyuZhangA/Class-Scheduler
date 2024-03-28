@@ -3,12 +3,8 @@ using System.Collections.ObjectModel;
 
 namespace Class_Scheduler.Common.Models
 {
-	/// <summary>
-	/// 随机选择颜色
-	/// </summary>
     public class Student : UserBase
     {
-
 		private string gradeAndClass;
 
 		public string GradeAndClass
@@ -90,6 +86,5 @@ namespace Class_Scheduler.Common.Models
 			schedule = new Schedule();
             return student;
 		}
-
     }
 }

@@ -39,6 +39,7 @@ namespace Class_Scheduler.Service
                 System.Diagnostics.Debug.WriteLine("Reflection Error: Property gotten is null {" +  MemberName + "}");
 
             property?.SetValue(userSetting, value);
+            // System.Diagnostics.Debug.WriteLine(userSetting.GlobalUnavailableTimeSots.Count);
         }
 
         public void RegisterSettingInstance(ISavableSettings savableSettings)

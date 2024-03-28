@@ -65,12 +65,12 @@
                 </StackPanel>
             </Button>
 
-            <Button Margin="0 0 24 0" Width="95" HorizontalAlignment="Right" Style="{StaticResource extraButton}" Height="35" Command="{Binding ViewStudentTimetableCommand}">
+            <!--<Button Margin="0 0 24 0" Width="95" HorizontalAlignment="Right" Style="{StaticResource extraButton}" Height="35" Command="{Binding ViewStudentTimetableCommand}">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Students" Height="auto" FontWeight="Regular" VerticalAlignment="Center" />
                     <Icon:PackIconMaterial Kind="ChevronRight" VerticalAlignment="Center" Width="9" Height="9" Margin="6 1 0 0"/>
                 </StackPanel>
-            </Button>
+            </Button>-->
         </StackPanel>
         
         <!--<Button Grid.Row="2" Margin="0 0 30 0" Width="95" HorizontalAlignment="Right" Style="{StaticResource extraButton}" Height="35" Command="{Binding ViewTeacherTimetableCommand}">
