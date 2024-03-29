@@ -4,7 +4,7 @@ A class scheduler app using C# WPF, based on Prism Framework.
 
 Main View:
 
-![image-20240329205724603](C:\Users\zzy\AppData\Roaming\Typora\typora-user-images\image-20240329205724603.png)
+![MainView](E:\Coding\WPF Application\Class_Scheduler\MainView.png)
 
 It has following features:
 
