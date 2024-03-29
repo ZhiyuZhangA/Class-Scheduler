@@ -4,7 +4,7 @@ A class scheduler app using C# WPF, based on Prism Framework.
 
 Main View:
 
-![Uploading MainView.png…]()
+![MainView.png]()
 
 
 It has following features:
