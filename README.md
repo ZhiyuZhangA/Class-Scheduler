@@ -26,7 +26,7 @@ https://docs.google.com/spreadsheets/d/1mkMWD4lIUhxbKrFfPRMYs2_WRILkVyvT/edit?us
 
 
 
-YouTube Link: [A Class Scheduler Program developed for school using C# WPF. (IB Computer Science IA) - YouTube](https://www.youtube.com/watch?v=lulCZvG_kkA&lc=UgxAnQXy76KkirCjwmh4AaABAg)
+YouTube Link: [A Class Scheduler Program developed for school using C# WPF. (IB Computer Science IA) - YouTube](https://www.youtube.com/watch?v=PAVyyWhZC8w)
 
 Follow Me: [Alison Zhang - YouTube](https://www.youtube.com/@alisonzhang702)
 
